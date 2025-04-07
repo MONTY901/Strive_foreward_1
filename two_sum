@@ -1,0 +1,19 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1; // Fix: Change from nums.length to nums.length - 1
+
+        Arrays.sort(nums);
+
+        while (left < right) {
+            if (nums[left] + nums[right] == target) {
+                return new int[]{left, right}; // Fix: Return indices instead of printing
+            } else if (nums[left] + nums[right] < target) {
+                left++;
+            } else { 
+                right--; // Fix: Corrected 'else' syntax
+            }
+        }
+        return new int[]{}; // Fix: Return an empty array if no pair is found
+    }
+}
